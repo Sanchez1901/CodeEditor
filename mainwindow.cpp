@@ -7,7 +7,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     //Читаем конфигурационный файл
-    ConfigReader confReader("default.conf");
+    try{
+        ConfigReader confReader("..\\build-Coder-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\Config.txt");
+    }catch(...){
+
+    }
 }
 
 MainWindow::~MainWindow()
