@@ -1,6 +1,7 @@
 #include "ConfigReader.h"
+#include <vector>
 
-ConfigReader::ConfigReader(std::string path):path(path){
+ConfigReader::ConfigReader(const std::string& path):path(path){
     in.open(path);
     if(!in.is_open()){
         throw ConfException("ReadConf");

@@ -3,12 +3,10 @@
 #include <map>
 #include <fstream>
 #include <string>
-#include <utility>
-#include <vector>
 
 struct ConfException{
     std::string except;
-    ConfException(std::string iskl):except(iskl){}
+    ConfException(const std::string& iskl):except(iskl){}
 };
 
 using Conf = std::map<std::string, std::string>;
@@ -19,7 +17,7 @@ private:
     std::ifstream in;
     std::string path;
 public:
-    ConfigReader(std::string path);
+    ConfigReader(const std::string& path);
     ~ConfigReader();
     Conf ReadAll();
     std::string ReadOne(const std::string& key);

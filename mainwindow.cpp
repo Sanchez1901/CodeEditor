@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "configreader.h"
+#include <QDebug>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -8,9 +9,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     //Читаем конфигурационный файл
     try{
-        ConfigReader confReader("..\\build-Coder-Desktop_Qt_5_15_2_MinGW_64_bit-Debug\\Config.txt");
+        ConfigReader confReader("default.conf");
     }catch(...){
-
+        qDebug() << "Не удалось прочитать данные из файла конфигурации";
     }
 }
 
