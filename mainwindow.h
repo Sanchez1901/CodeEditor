@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "highlighter.h"
+#include "highlighterQss.h"
+
+
+#include "codeeditor.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
