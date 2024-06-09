@@ -2,6 +2,9 @@
 #include "ui_mainwindow.h"
 #include "configreader.h"
 #include <QDebug>
+#include <QtWidgets>
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
