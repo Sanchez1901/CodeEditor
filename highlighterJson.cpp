@@ -48,46 +48,50 @@
 **
 ****************************************************************************/
 
-#ifndef HIGHLIGHTER_H
-#define HIGHLIGHTER_H
-
-#include <QSyntaxHighlighter>
-#include <QTextCharFormat>
-#include <QRegularExpression>
-
-QT_BEGIN_NAMESPACE
-class QTextDocument;
-QT_END_NAMESPACE
+#include "highlighterJson.h"
 
 //! [0]
-class Highlighter : public QSyntaxHighlighter
+HighlighterJSON::HighlighterJSON(QTextDocument *parent)
+    : QSyntaxHighlighter(parent)
 {
-    Q_OBJECT
+    HighlightingRule rule;
 
-public:
-    Highlighter(QTextDocument *parent = 0);
+//! [4]
+//!
+    quotationKeyWordFormat.setForeground(Qt::darkMagenta);
+    rule.pattern = QRegularExpression(QStringLiteral("\".+\" *(?=:)"));
+    rule.format = quotationKeyWordFormat;
+    highlightingRules.append(rule);
 
-protected:
-    void highlightBlock(const QString &text) override;
+    quotationFormat.setForeground(Qt::darkCyan);
+    rule.pattern = QRegularExpression(QStringLiteral("(?<=:) *\".*\""));
+    rule.format = quotationFormat;
+    highlightingRules.append(rule);
+//! [4]
 
-private:
-    struct HighlightingRule
-    {
-        QRegularExpression pattern;
-        QTextCharFormat format;
-    };
-    QVector<HighlightingRule> highlightingRules;
 
-    QRegularExpression commentStartExpression;
-    QRegularExpression commentEndExpression;
+    KeyWordFormat.setForeground(Qt::darkYellow);
+    rule.pattern = QRegularExpression(QStringLiteral("(\\btrue\\b|\\bfalse\\b)"));
+    rule.format = KeyWordFormat;
+    highlightingRules.append(rule);
 
-    QTextCharFormat keywordFormat;
-    QTextCharFormat classFormat;
-    QTextCharFormat singleLineCommentFormat;
-    QTextCharFormat multiLineCommentFormat;
-    QTextCharFormat quotationFormat;
-    QTextCharFormat functionFormat;
-};
-//! [0]
+    ListFormat.setForeground(Qt::darkGreen);
+    rule.pattern = QRegularExpression(QStringLiteral("\".+\" *: *\\[.+]"));
+    rule.format = ListFormat;
+    highlightingRules.append(rule);
+}
+//! [6]
 
-#endif // HIGHLIGHTER_H
+//! [7]
+void HighlighterJSON::highlightBlock(const QString &text)
+{
+    for (const HighlightingRule &rule : qAsConst(highlightingRules)) {
+        QRegularExpressionMatchIterator matchIterator = rule.pattern.globalMatch(text);
+        while (matchIterator.hasNext()) {
+            QRegularExpressionMatch match = matchIterator.next();
+            setFormat(match.capturedStart(), match.capturedLength(), rule.format);
+        }
+    }
+
+}
+//! [11]

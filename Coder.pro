@@ -13,6 +13,7 @@ SOURCES += \
     colorscheme.cpp \
     configreader.cpp \
     highlighter.cpp \
+    highlighterJson.cpp \
     highlighterQss.cpp \
     main.cpp \
     mainwindow.cpp
@@ -22,6 +23,7 @@ HEADERS += \
     colorscheme.h \
     configreader.h \
     highlighter.h \
+    highlighterJson.h \
     highlighterQss.h \
     mainwindow.h
 
