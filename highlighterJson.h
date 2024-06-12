@@ -48,8 +48,8 @@
 **
 ****************************************************************************/
 
-#ifndef HIGHLIGHTER_H
-#define HIGHLIGHTER_H
+#ifndef HIGHLIGHTERJSON_H
+#define HIGHLIGHTERJSON_H
 
 #include <QSyntaxHighlighter>
 #include <QTextCharFormat>
@@ -60,12 +60,12 @@ class QTextDocument;
 QT_END_NAMESPACE
 
 //! [0]
-class Highlighter : public QSyntaxHighlighter
+class HighlighterJSON : public QSyntaxHighlighter
 {
     Q_OBJECT
 
 public:
-    Highlighter(QTextDocument *parent = 0);
+    HighlighterJSON(QTextDocument *parent = 0);
 
 protected:
     void highlightBlock(const QString &text) override;
@@ -78,16 +78,11 @@ private:
     };
     QVector<HighlightingRule> highlightingRules;
 
-    QRegularExpression commentStartExpression;
-    QRegularExpression commentEndExpression;
-
-    QTextCharFormat keywordFormat;
-    QTextCharFormat classFormat;
-    QTextCharFormat singleLineCommentFormat;
-    QTextCharFormat multiLineCommentFormat;
+    QTextCharFormat KeyWordFormat;
+    QTextCharFormat quotationKeyWordFormat;
     QTextCharFormat quotationFormat;
-    QTextCharFormat functionFormat;
+    QTextCharFormat ListFormat;
 };
 //! [0]
 
-#endif // HIGHLIGHTER_H
+#endif // HighlighterJSON_H
