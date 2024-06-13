@@ -16,7 +16,8 @@ SOURCES += \
     highlighterJson.cpp \
     highlighterQss.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    stylehelper.cpp
 
 HEADERS += \
     codeeditor.h \
@@ -25,7 +26,8 @@ HEADERS += \
     highlighter.h \
     highlighterJson.h \
     highlighterQss.h \
-    mainwindow.h
+    mainwindow.h \
+    stylehelper.h
 
 FORMS += \
     mainwindow.ui
@@ -37,6 +39,9 @@ DISTFILES += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resourses.qrc
 
 
 
