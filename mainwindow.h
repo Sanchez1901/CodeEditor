@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include "highlighter.h"
 #include "highlighterQss.h"
-#include "highlighterJson.h""
+#include "highlighterJson.h"
 
 #include "codeeditor.h"
 
