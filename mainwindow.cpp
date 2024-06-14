@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "configreader.h"
 #include "stylehelper.h"
+#include "dialog.h"
 #include <QDebug>
 
 
@@ -28,5 +29,13 @@ MainWindow::~MainWindow()
 void MainWindow::setInterfaceStyle()
 {
     StyleHelper::setFonts();
-    this->setStyleSheet(StyleHelper::getMainStyleLight());
+    this->setStyleSheet(StyleHelper::getMainStyleLight()); 
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    Dialog dlg("ff",this);
+    qDebug() << "ff";
+    dlg.exec();
+}
+
