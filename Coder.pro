@@ -12,6 +12,7 @@ SOURCES += \
     codeeditor.cpp \
     colorscheme.cpp \
     configreader.cpp \
+    dialog.cpp \
     highlighter.cpp \
     highlighterJson.cpp \
     highlighterQss.cpp \
@@ -23,6 +24,7 @@ HEADERS += \
     codeeditor.h \
     colorscheme.h \
     configreader.h \
+    dialog.h \
     highlighter.h \
     highlighterJson.h \
     highlighterQss.h \
@@ -30,6 +32,7 @@ HEADERS += \
     stylehelper.h
 
 FORMS += \
+    dialog.ui \
     mainwindow.ui
 
 DISTFILES += \
