@@ -8,6 +8,7 @@
 
 #include "codeeditor.h"
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -24,6 +25,26 @@ public:
 
 private slots:
     void ruleChengeButton();
+	//Файл
+    void openActionSlot();
+    void exportActionSlot();
+    void exitActionSlot();
+    //Заметки
+    void newActionSlot();
+    void saveCopyActionSlot();
+    void saveAsActionSlot();
+    void clearActionSlot();
+    void deleteActionSlot();
+    //Редактировать
+    void undoActionSlot();
+    void returnActionSlot();
+    void copyActionSlot();
+    void pasteActionSlot();
+    void cutActionSlot();
+    void settingsActionSlot();
+    //Помощь
+    void referenceActionSlot();
+    void aboutProgramActionSlot();
 
 private:
     Ui::MainWindow *ui;

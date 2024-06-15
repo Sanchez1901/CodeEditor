@@ -70,3 +70,4 @@ void ConfigReader::IzmZn(std::string key, std::string value){
     }
     f.close();
 }
+
