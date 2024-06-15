@@ -1,15 +1,23 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "configreader.h"
+#include "stylehelper.h"
+#include "dialog.h"
 #include <QDebug>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     //Читаем конфигурационный файл
-    ConfigReader confReader("default.conf");
-    //Файл
+    try{
+        ConfigReader confReader("default.conf");
+    }catch(...){
+        qDebug() << "Не удалось прочитать данные из файла конфигурации";
+    }
+    setInterfaceStyle();
+	//Файл
     connect(ui->OpenAction,&QAction::triggered,this,&MainWindow::openActionSlot);
     connect(ui->ExportAction,&QAction::triggered,this,&MainWindow::exportActionSlot);
     connect(ui->ExitAction,&QAction::triggered,this,&MainWindow::exitActionSlot);
@@ -29,7 +37,11 @@ MainWindow::MainWindow(QWidget *parent)
     //Помощь
     connect(ui->ReferenceAction,&QAction::triggered,this,&MainWindow::referenceActionSlot);
     connect(ui->AboutProgramAction,&QAction::triggered,this,&MainWindow::aboutProgramActionSlot);
+
+    connect(ui->pushButton,&QPushButton::clicked,this,&MainWindow::ruleChengeButton);
+
 }
+
 
 MainWindow::~MainWindow()
 {
@@ -115,3 +127,21 @@ void MainWindow::aboutProgramActionSlot()
 {
 
 }
+
+void MainWindow::ruleChengeButton()
+{
+    QString g =ui->pushButton->objectName();
+    Dialog dlg(g,this);
+    qDebug() << "ff";
+    dlg.exec();
+    dlg.getGo();
+
+
+}
+
+void MainWindow::setInterfaceStyle()
+{
+    StyleHelper::setFonts();
+    this->setStyleSheet(StyleHelper::getMainStyleLight()); 
+}
+

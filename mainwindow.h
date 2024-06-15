@@ -2,6 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "highlighter.h"
+#include "highlighterQss.h"
+#include "highlighterJson.h"
+
+#include "codeeditor.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,10 +23,9 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private:
-    Ui::MainWindow *ui;
 private slots:
-    //Файл
+    void ruleChengeButton();
+	//Файл
     void openActionSlot();
     void exportActionSlot();
     void exitActionSlot();
@@ -40,5 +45,10 @@ private slots:
     //Помощь
     void referenceActionSlot();
     void aboutProgramActionSlot();
+
+private:
+    Ui::MainWindow *ui;
+
+    void setInterfaceStyle();
 };
 #endif // MAINWINDOW_H

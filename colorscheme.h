@@ -3,6 +3,9 @@
 
 #include <QString>
 
+
+//ColorScheme
+
 class ColorScheme
 {
 public:
