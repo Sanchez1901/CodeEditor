@@ -14,9 +14,16 @@ class Dialog : public QDialog
 public:
     explicit Dialog(QString text,QWidget *parent = nullptr);
     ~Dialog();
+    int index;
+    QString getGo();
+    QString go;
+private slots:
+    void elListClickSlot();
 
 private:
     Ui::Dialog *ui;
+
+
 };
 
 #endif // DIALOG_H

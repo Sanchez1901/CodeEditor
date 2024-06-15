@@ -19,23 +19,29 @@ MainWindow::MainWindow(QWidget *parent)
         qDebug() << "Не удалось прочитать данные из файла конфигурации";
     }
     setInterfaceStyle();
+
+    connect(ui->pushButton,&QPushButton::clicked,this,&MainWindow::ruleChengeButton);
+
 }
+
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
-void MainWindow::setInterfaceStyle()
-{
-    StyleHelper::setFonts();
-    this->setStyleSheet(StyleHelper::getMainStyleLight()); 
-}
-
-void MainWindow::on_pushButton_clicked()
+void MainWindow::ruleChengeButton()
 {
     Dialog dlg("ff",this);
     qDebug() << "ff";
     dlg.exec();
+    dlg.getGo();
+
+}
+
+void MainWindow::setInterfaceStyle()
+{
+    StyleHelper::setFonts();
+    this->setStyleSheet(StyleHelper::getMainStyleLight()); 
 }
 
