@@ -21,7 +21,6 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    int numElLisstWidget;
 
 private slots:
     void ruleChengeButton();

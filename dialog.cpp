@@ -1,13 +1,13 @@
 #include "dialog.h"
 #include "ui_dialog.h"
 #include <QDebug>
-#include <QObject>
 
 Dialog::Dialog(QString text,QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::Dialog)
 {
     ui->setupUi(this);
+    QDialog::setWindowTitle (text );
     ui->listWidget->addItem("C++");
     ui->listWidget->addItem("JavaScript");
     ui->listWidget->addItem("HTML");
@@ -34,7 +34,7 @@ void Dialog::elListClickSlot()
 {
 
     index=ui->listWidget->currentRow();
-    //qDebug()<<index;
+
     this->accept();
 }
 

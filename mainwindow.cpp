@@ -32,10 +32,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::ruleChengeButton()
 {
-    Dialog dlg("ff",this);
+    QString g =ui->pushButton->objectName();
+    Dialog dlg(g,this);
     qDebug() << "ff";
     dlg.exec();
     dlg.getGo();
+
 
 }
 
