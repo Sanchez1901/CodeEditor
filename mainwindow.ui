@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1104</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QWidget" name="widget" native="true">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTreeWidget" name="treeWidget">
+          <column>
+           <property name="text">
+            <string notr="true">1</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="widget_2" native="true">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QSplitter" name="splitter">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <widget class="QTabWidget" name="tabWidget">
+           <property name="currentIndex">
+            <number>1</number>
+           </property>
+           <widget class="QWidget" name="tab">
+            <attribute name="title">
+             <string>Tab 1</string>
+            </attribute>
+           </widget>
+           <widget class="QWidget" name="tab_2">
+            <attribute name="title">
+             <string>Tab 2</string>
+            </attribute>
+           </widget>
+          </widget>
+          <widget class="QTabWidget" name="tabWidget_2">
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
+           <widget class="QWidget" name="tab_3">
+            <attribute name="title">
+             <string>Tab 1</string>
+            </attribute>
+           </widget>
+           <widget class="QWidget" name="tab_4">
+            <attribute name="title">
+             <string>Tab 2</string>
+            </attribute>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_4" native="true">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>598</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="text">
+              <string>PushButton</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton">
+             <property name="text">
+              <string>PushButton</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1104</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <addaction name="OpenAction"/>
+    <addaction name="ExportAction"/>
+    <addaction name="ExitAction"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Заметки</string>
+    </property>
+    <addaction name="NewAction"/>
+    <addaction name="SaveCopyAction"/>
+    <addaction name="SaveAsAction"/>
+    <addaction name="ClearAction"/>
+    <addaction name="DeleteAction"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Редактировать</string>
+    </property>
+    <addaction name="UndoAction"/>
+    <addaction name="ReturnAction"/>
+    <addaction name="CopyAction"/>
+    <addaction name="PasteAction"/>
+    <addaction name="CutAction"/>
+    <addaction name="SettingsAction"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>Помощь</string>
+    </property>
+    <addaction name="ReferenceAction"/>
+    <addaction name="AboutProgramAction"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+  </widget>
+  <action name="OpenAction">
+   <property name="text">
+    <string>Открыть</string>
+   </property>
+   <property name="toolTip">
+    <string>Открыть</string>
+   </property>
+  </action>
+  <action name="ExportAction">
+   <property name="text">
+    <string>Экспорт</string>
+   </property>
+   <property name="toolTip">
+    <string>Экспорт</string>
+   </property>
+  </action>
+  <action name="ExitAction">
+   <property name="text">
+    <string>Выход</string>
+   </property>
+   <property name="toolTip">
+    <string>Выход</string>
+   </property>
+  </action>
+  <action name="NewAction">
+   <property name="text">
+    <string>Новая</string>
+   </property>
+  </action>
+  <action name="SaveCopyAction">
+   <property name="text">
+    <string>Сохранить копию</string>
+   </property>
+  </action>
+  <action name="SaveAsAction">
+   <property name="text">
+    <string>Сохранить как</string>
+   </property>
+  </action>
+  <action name="ClearAction">
+   <property name="text">
+    <string>Очистить</string>
+   </property>
+  </action>
+  <action name="DeleteAction">
+   <property name="text">
+    <string>Удалить</string>
+   </property>
+  </action>
+  <action name="UndoAction">
+   <property name="text">
+    <string>Отменить</string>
+   </property>
+  </action>
+  <action name="ReturnAction">
+   <property name="text">
+    <string>Вернуть</string>
+   </property>
+  </action>
+  <action name="CopyAction">
+   <property name="text">
+    <string>Копировать</string>
+   </property>
+  </action>
+  <action name="PasteAction">
+   <property name="text">
+    <string>Вставить</string>
+   </property>
+  </action>
+  <action name="CutAction">
+   <property name="text">
+    <string>Вырезать </string>
+   </property>
+  </action>
+  <action name="SettingsAction">
+   <property name="text">
+    <string>Настройки</string>
+   </property>
+  </action>
+  <action name="ReferenceAction">
+   <property name="text">
+    <string>Справка</string>
+   </property>
+  </action>
+  <action name="AboutProgramAction">
+   <property name="text">
+    <string>О программе</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
